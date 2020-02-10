@@ -28,15 +28,25 @@ client.connect(async err => {
 async function readFileAndUpdateCollection(fileName, collection) {
   const fileStream = createReadStream(fileName);
   const readLineFile = createInterface({ input: fileStream });
-  const promises = [];
   let currentLine = 1;
+  const promises = [];
+  const termsToSave = [];
 
   await new Promise(resolve => {
     readLineFile.on("line", async term => {
-      promises.push(saveTerm(term, collection, currentLine++));
+      termsToSave.push(term);
+      currentLine++;
+      process.stdout.write(
+        `\rline: ${currentLine} ${term}=========================================`
+      );
+
+      if (termsToSave.length >= 999) {
+        promises.push(saveTerms(termsToSave.splice(0), collection));
+      }
     });
 
     readLineFile.on("close", async () => {
+      promises.push(saveTerms(termsToSave.splice(0), collection));
       await Promise.all(promises);
       resolve();
     });
@@ -44,24 +54,24 @@ async function readFileAndUpdateCollection(fileName, collection) {
 }
 
 /**
- * @param {string} term
+ * @param {string[]} term
  * @param {import('mongodb').Collection} collection
- * @param {number} currentLine
  */
-async function saveTerm(term, collection, currentLine) {
+async function saveTerms(terms, collection) {
+  const bulkQuery = terms.map(parseTermsToBulkQuery);
+
+  await new Promise(resolve => collection.bulkWrite(bulkQuery, {}, resolve));
+}
+
+function parseTermsToBulkQuery(term) {
   const parsedTerm = term.trim().toLowerCase();
   const parsedInitial = isNaN(Number(parsedTerm[0])) ? parsedTerm[0] : "0-9";
 
-  await new Promise(resolve => {
-    collection.replaceOne(
-      { Termo: parsedTerm },
-      { Inicial: parsedInitial, Termo: parsedTerm },
-      { upsert: true },
-      resolve
-    );
-  });
-
-  process.stdout.write(
-    `\rline: ${currentLine}, ${term} => ${parsedTerm} (${parsedInitial})=========================================`
-  );
+  return {
+    replaceOne: {
+      filter: { Termo: parsedTerm },
+      replacement: { Inicial: parsedInitial, Termo: parsedTerm },
+      upsert: true
+    }
+  };
 }
