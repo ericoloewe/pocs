@@ -5,6 +5,7 @@ const { createInterface } = require("readline");
 const path = require("path");
 
 const client = new MongoClient(uri, { useUnifiedTopology: true });
+const BULK_SIZE = 9999;
 
 client.connect(async err => {
   if (!err) {
@@ -12,7 +13,10 @@ client.connect(async err => {
       .db("db_stg_casasbahia")
       .collection("BuscasPopulares");
 
-    await readFileAndUpdateCollection(path.resolve("teste.txt"), collection);
+    await readFileAndUpdateCollection(
+      path.resolve("iphone.txt"),
+      collection
+    );
   } else {
     console.error("err", err);
   }
@@ -40,7 +44,7 @@ async function readFileAndUpdateCollection(fileName, collection) {
         `\rline: ${currentLine} ${term}=========================================`
       );
 
-      if (termsToSave.length >= 999) {
+      if (termsToSave.length >= BULK_SIZE) {
         promises.push(saveTerms(termsToSave.splice(0), collection));
       }
     });
@@ -60,12 +64,22 @@ async function readFileAndUpdateCollection(fileName, collection) {
 async function saveTerms(terms, collection) {
   const bulkQuery = terms.map(parseTermsToBulkQuery);
 
-  await new Promise(resolve => collection.bulkWrite(bulkQuery, {}, resolve));
+  await new Promise((resolve, reject) =>
+    collection.bulkWrite(bulkQuery, {}, (err, r) => {
+      if (err && r == null) {
+        console.error("err", err);
+
+        return reject(err);
+      }
+
+      resolve(r);
+    })
+  );
 }
 
 function parseTermsToBulkQuery(term) {
   const parsedTerm = term.trim().toLowerCase();
-  const parsedInitial = isNaN(Number(parsedTerm[0])) ? parsedTerm[0] : "0-9";
+  const parsedInitial = /[a-z]/i.test(parsedTerm[0]) ? parsedTerm[0] : "#";
 
   return {
     replaceOne: {
