@@ -1,0 +1,26 @@
+{
+  "name": "words",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "android": "node node_modules/react-native/local-cli/cli.js run-android && tsc"
+  },
+  "dependencies": {
+    "@types/react": "^15.0.9",
+    "@types/react-native": "^0.37.12",
+    "@types/redux": "^3.6.0",
+    "@types/whatwg-fetch": "0.0.33",
+    "native-base": "^2.0.9",
+    "react": "~15.4.0",
+    "react-native": "0.41.2",
+    "react-native-action-button": "^2.0.22",
+    "react-native-router-flux": "^3.37.0",
+    "react-native-vector-icons": "^4.0.0",
+    "redux": "^3.6.0"
+  },
+  "devDependencies": {
+    "tslint": "^4.4.2",
+    "typescript": "^2.1.6"
+  }
+}
