@@ -5,7 +5,7 @@ const { createInterface } = require("readline");
 const path = require("path");
 
 const client = new MongoClient(uri, { useUnifiedTopology: true });
-const BULK_SIZE = 9999;
+const BULK_SIZE = 999;
 
 client.connect(async err => {
   if (!err) {
