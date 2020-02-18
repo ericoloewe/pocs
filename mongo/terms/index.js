@@ -14,7 +14,7 @@ client.connect(async err => {
       .collection("BuscasPopulares");
 
     await readFileAndUpdateCollection(
-      path.resolve("iphone.txt"),
+      path.resolve("keyword.txt"),
       collection
     );
   } else {
