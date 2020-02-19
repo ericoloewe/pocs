@@ -6,6 +6,7 @@ const path = require("path");
 
 const client = new MongoClient(uri, { useUnifiedTopology: true });
 const BULK_SIZE = 999;
+const file = (process.argv[2].trim()) || 'keywords.txt'
 
 client.connect(async err => {
   if (!err) {
@@ -14,7 +15,7 @@ client.connect(async err => {
       .collection("BuscasPopulares");
 
     await readFileAndUpdateCollection(
-      path.resolve("keyword.txt"),
+      path.resolve(file),
       collection
     );
   } else {
