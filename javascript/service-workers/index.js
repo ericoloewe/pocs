@@ -1,0 +1,1 @@
+ServiceWorkerContainer.register(scriptURL, options)

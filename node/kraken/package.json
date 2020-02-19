@@ -1,0 +1,9 @@
+{
+  "name": "kraken",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "generator-kraken": "^2.2.3"
+  }
+}
