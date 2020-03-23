@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/playlist.dart';
 
 class MyHomePage extends StatefulWidget {
   MyHomePage({Key key, this.title}) : super(key: key);
@@ -29,8 +30,7 @@ class _MyHomePageState extends State<MyHomePage> {
       // so that the display can reflect the updated values. If we changed
       // _counter without calling setState(), then the build method would not be
       // called again, and so nothing would appear to happen.
-      _counter += 1;
-      _playlists.add(Playlist('Lorem ${_counter}', 'A kind of list of music',
+      _playlists.add(Playlist('Lorem ${_counter++}', 'A kind of list of music',
           'https://flutter.github.io/assets-for-api-docs/assets/widgets/owl-2.jpg'));
     });
   }
@@ -56,11 +56,11 @@ class _MyHomePageState extends State<MyHomePage> {
             children: _playlists
                 .map((p) => ListTile(
                       leading: Image.network(
-                          'https://flutter.github.io/assets-for-api-docs/assets/widgets/owl-2.jpg'),
+                          p.image),
                       trailing: Icon(Icons.favorite),
-                      title: Text('Playlist 1'),
-                      subtitle: Text('A kind of list of music'),
-                      onTap: () => Navigator.pushNamed(context, '/second'),
+                      title: Text(p.title),
+                      subtitle: Text(p.subtitle),
+                      onTap: () => Navigator.pushNamed(context, '/second', arguments: p),
                     ))
                 .toList()),
       ),
@@ -71,12 +71,4 @@ class _MyHomePageState extends State<MyHomePage> {
       ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
-}
-
-class Playlist {
-  String title;
-  String subtitle;
-  String image;
-
-  Playlist(this.title, this.subtitle, this.image);
 }

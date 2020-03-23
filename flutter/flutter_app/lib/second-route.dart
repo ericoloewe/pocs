@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/playlist.dart';
 
 class SecondRoutePage extends StatefulWidget {
   SecondRoutePage({Key key, this.title}) : super(key: key);
@@ -27,6 +28,9 @@ class _MyHomePageState extends State<SecondRoutePage> {
     // The Flutter framework has been optimized to make rerunning build methods
     // fast, so that you can just rebuild anything that needs updating rather
     // than having to individually change instances of widgets.
+
+    final Playlist playlist = ModalRoute.of(context).settings.arguments;
+
     return Scaffold(
       appBar: AppBar(
         // Here we take the value from the MyHomePage object that was created by
@@ -34,21 +38,20 @@ class _MyHomePageState extends State<SecondRoutePage> {
         title: Text(widget.title),
       ),
       body: Center(
-        child: RaisedButton(
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          child: Text('Go back!'),
-        ),
-      ),
+          child: ListView(
+        children: <Widget>[
+          RaisedButton(
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            child: Text('Go back!'),
+          ),
+          Text(playlist.title),
+          Text(playlist.subtitle),
+          Image.network(
+              'https://flutter.github.io/assets-for-api-docs/assets/widgets/owl-2.jpg'),
+        ],
+      )),
     );
   }
-}
-
-class Playlist {
-  String title;
-  String subtitle;
-  String image;
-
-  Playlist(this.title, this.subtitle, this.image);
 }
