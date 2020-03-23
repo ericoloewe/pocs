@@ -80,7 +80,7 @@ async function saveTerms(terms, collection) {
 
 function parseTermsToBulkQuery(term) {
   const parsedTerm = term.trim().toLowerCase();
-  const parsedInitial = /[a-z]/i.test(parsedTerm[0]) ? parsedTerm[0] : "#";
+  const parsedInitial = /[\pL\pM\p{Zs}.-]/ui.test(parsedTerm[0]) ? parsedTerm[0] : "#";
 
   return {
     replaceOne: {
