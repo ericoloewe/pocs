@@ -27,7 +27,7 @@ class MyDrawer extends StatelessWidget {
         ListTile(
           leading: Icon(Icons.cake),
           title: Text('Chips'),
-          onTap: () => print("Chips"),
+          onTap: () => Navigator.pushNamed(context, '/chips'),
         ),
         ListTile(
           leading: Icon(Icons.slideshow),

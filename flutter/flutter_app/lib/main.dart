@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/second-route.dart';
 
+import 'chips.dart';
 import 'home.dart';
 import 'input.dart';
 
@@ -33,6 +34,7 @@ class MyApp extends StatelessWidget {
         // When navigating to the "/second" route, build the SecondScreen widget.
         '/second': (context) => SecondRoutePage(title: 'Second page'),
         '/input': (context) => InputPage(title: 'Input'),
+        '/chips': (context) => ChipsPage(title: 'Chips'),
       },
     );
   }
