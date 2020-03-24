@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/playlist.dart';
 
+import 'drawer.dart';
+
 class SecondRoutePage extends StatefulWidget {
   SecondRoutePage({Key key, this.title}) : super(key: key);
 
@@ -52,6 +54,7 @@ class _MyHomePageState extends State<SecondRoutePage> {
               'https://flutter.github.io/assets-for-api-docs/assets/widgets/owl-2.jpg'),
         ],
       )),
+      drawer: MyDrawer(),
     );
   }
 }

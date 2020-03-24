@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/playlist.dart';
 
+import 'drawer.dart';
+
 class MyHomePage extends StatefulWidget {
   MyHomePage({Key key, this.title}) : super(key: key);
 
@@ -64,6 +66,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     ))
                 .toList()),
       ),
+      drawer: MyDrawer(),
       floatingActionButton: FloatingActionButton(
         onPressed: _incrementCounter,
         tooltip: 'Increment',
