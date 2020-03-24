@@ -22,7 +22,7 @@ class MyDrawer extends StatelessWidget {
         ListTile(
           leading: Icon(Icons.message),
           title: Text('Input'),
-          onTap: () => print("Input"),
+          onTap: () => Navigator.pushNamed(context, '/input'),
         ),
         ListTile(
           leading: Icon(Icons.cake),

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_app/second-route.dart';
 
 import 'home.dart';
+import 'input.dart';
 
 void main() => runApp(MyApp());
 
@@ -31,6 +32,7 @@ class MyApp extends StatelessWidget {
         '/': (context) => MyHomePage(title: 'Home page'),
         // When navigating to the "/second" route, build the SecondScreen widget.
         '/second': (context) => SecondRoutePage(title: 'Second page'),
+        '/input': (context) => InputPage(title: 'Input'),
       },
     );
   }
