@@ -1,32 +1,50 @@
 from sklearn.neighbors import KNeighborsClassifier
-import csv
+from sklearn import preprocessing
 
-tsv_file = open(
-    "D:\\Temp\\dataset-music\\lastfm-dataset-1K\\userid-timestamp-artid-artname-traid-traname.tsv", encoding="utf8")
+# creating labelEncoder
+le = preprocessing.LabelEncoder()
 
-csv_file = open(
-    "D:\\Temp\\dataset-music\\lastfm-dataset-1K\\userid-timestamp-artid-artname-traid-traname_parsed.csv", encoding="utf8", mode='w')
+# Assigning features and label variables
+# First Feature
+weather = ['Sunny', 'Sunny', 'Overcast', 'Rainy', 'Rainy', 'Rainy', 'Overcast',
+           'Sunny', 'Sunny', 'Rainy', 'Sunny', 'Overcast', 'Overcast', 'Rainy']
+# Second Feature
+temp = ['Hot', 'Hot', 'Hot', 'Mild', 'Cool', 'Cool', 'Cool',
+        'Mild', 'Cool', 'Mild', 'Mild', 'Mild', 'Hot', 'Mild']
 
-reader = csv.reader(tsv_file, delimiter="\t")
+# Label or target varible
+play = ['No', 'No', 'Yes', 'Yes', 'Yes', 'No', 'Yes',
+        'No', 'Yes', 'Yes', 'Yes', 'Yes', 'Yes', 'No']
 
-writer = csv.writer(csv_file, delimiter=',', quotechar='"',
-                    quoting=csv.QUOTE_MINIMAL)
+# Converting string labels into numbers.
+weather_encoded = le.fit_transform(weather)
 
-for row in reader:
-    row.remove('\n')
+print(weather_encoded)
 
-    if row[0] == "user_000101":
-        break
+# converting string labels into numbers
+temp_encoded = le.fit_transform(temp)
 
-    writer.writerow(row)
+print(temp_encoded)
 
-knn = KNeighborsClassifier(n_neighbors=3)
+label = le.fit_transform(play)
 
-# knn.fit(features, classes)
+print(label)
 
-# knn.predict(new_object)
+# combinig weather and temp into single listof tuples
+features = list(zip(weather_encoded, temp_encoded))
 
-print("Hello world")
+print(features)
 
-tsv_file.close()
-csv_file.close()
+model = KNeighborsClassifier(n_neighbors=3)
+
+# Train the model using the training sets
+model.fit(features, label)
+
+# Predict Output
+print(model.predict([[0, 2]]))  # 0:Overcast, 2:Mild
+
+print(model.predict([[1, 1]]))  # 1:Rainy, 1:Hot
+
+print(model.predict([[2, 0]]))  # 2:Sunny, 0:Cool
+
+print(model.predict([[0, 0]]))  # 0:Overcast, 0:Cool
