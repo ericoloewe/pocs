@@ -1,0 +1,45 @@
+{
+
+  "dev": {
+    "STATIC_URL_PREFIX": "",
+    "LOGIN": "/api/session/login",
+    "ICON_PATH_PREFIX": "images/vendor/",
+    "WITHOUT_LOADER": [
+      "images/**.svg",
+      "/api/rating/project-user/list-evaluation/**",
+      "/api/rating/gatekeeper-user/list-evaluation/**",
+      "/api/rating/innovation-team/list-evaluation/**",
+      "/api/score/save",
+      "/api/ranking/**"
+    ]
+  },
+
+  "hml": {
+    "STATIC_URL_PREFIX": "https://static.dreamteam.cocacola.com.br/static/",
+    "LOGIN": "/Shibboleth.sso/Login",
+    "ICON_PATH_PREFIX": "https://static.dreamteam.cocacola.com.br/static/images/vendor/",
+    "WITHOUT_LOADER": [
+      "images/**.svg",
+      "/api/rating/project-user/list-evaluation/**",
+      "/api/rating/gatekeeper-user/list-evaluation/**",
+      "/api/rating/innovation-team/list-evaluation/**",
+      "/api/score/save",
+      "/api/ranking/**"
+    ]
+  },
+
+  "pro": {
+    "STATIC_URL_PREFIX": "https://static.dreamteam.cocacola.com.br/static/",
+    "LOGIN": "/Shibboleth.sso/Login",
+    "ICON_PATH_PREFIX": "https://static.dreamteam.cocacola.com.br/static/images/vendor/",
+    "WITHOUT_LOADER": [
+      "images/**.svg",
+      "/api/rating/project-user/list-evaluation/**",
+      "/api/rating/gatekeeper-user/list-evaluation/**",
+      "/api/rating/innovation-team/list-evaluation/**",
+      "/api/score/save",
+      "/api/ranking/**"
+    ]
+  }
+
+}

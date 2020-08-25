@@ -1,0 +1,6 @@
+<div class="words list-group">
+    <word-item [word]="word" *ngFor="let word of words" class="word list-group-item">
+    </word-item>
+    <word-item [word]="{id: null, name: 'No items to show'}" *ngIf="words.length === 0" class="word list-group-item list-group-item-info">
+    </word-item>
+</div>

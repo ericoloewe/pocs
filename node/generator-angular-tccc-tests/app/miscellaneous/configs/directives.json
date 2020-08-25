@@ -1,0 +1,32 @@
+{
+
+  "APP_INNOVATION_TEAM_RATING": {
+    "NAME": "Innovation Team",
+    "AVATAR_FILE": "images/common/logo_innovation.png"
+  },
+
+  "APP_EVALUATION_FORM_STAR_RATING": {
+    "MAX_STARS": 4,
+    "STARS_VALUE_STEP": 2,
+    "STARS_INITIAL_VALUE": -3
+  },
+
+  "APP_IMAGE_FALLBACK": {
+    "PROJECT_IMAGE": "images/common/placeholder-project.png",
+    "PROJECT_MEMBER_AVATAR": "images/common/placeholder-project-member.png"
+  },
+
+  "APP_FORM_INPUT_TEXT": {
+    "PROFILES": {
+      "EMAIL": {
+        "MAXLENGTH": 255,
+        "MINLENGTH": 3
+      },
+      "PASSWORD": {
+        "MAXLENGTH": 255,
+        "MINLENGTH": 3
+      }
+    }
+  }
+
+}

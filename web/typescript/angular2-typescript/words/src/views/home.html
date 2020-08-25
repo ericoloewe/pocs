@@ -1,0 +1,16 @@
+<article class="container">
+    <section class="page-header">
+        <h1>Home</h1>
+    </section>
+    <section class="well">
+        <form (ngSubmit)="onSubmit(word)">
+            <div class="form-group">
+                <input type="text" class="form-control" name="name" [(ngModel)]="word.name" placeholder="Type an word" required />
+            </div>
+            <button type="submit" class="btn btn-default" [disabled]="!word.name">Salvar</button>
+        </form>
+    </section>
+    <section>
+        <word-list></word-list>
+    </section>
+</article>

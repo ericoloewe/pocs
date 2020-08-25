@@ -1,0 +1,29 @@
+{
+  "name": "graphql-poc",
+  "vendor": "cwi",
+  "version": "0.1.0",
+  "title": "graphql-poc",
+  "description": "lorem",
+  "policies": [
+    {
+      "name": "vbase-read-write"
+    },
+    {
+      "name": "outbound-access",
+      "attrs": {
+        "host": "{{account}}.myvtex.com",
+        "path": "*"
+      }
+    }
+  ],
+  "dependencies": {},
+  "builders": {
+    "graphql": "1.x",
+    "node": "3.x"
+  },
+  "credentialType": "absolute",
+  "mustUpdateAt": "2019-09-18",
+  "registries": [
+    "smartcheckout"
+  ]
+}

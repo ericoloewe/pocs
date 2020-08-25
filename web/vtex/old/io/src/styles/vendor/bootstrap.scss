@@ -1,0 +1,14 @@
+/**
+ * Bootstrap stylesheet
+ */
+
+// resets and dependencies
+@import "../../node_modules/bootstrap/scss/bootstrap-reboot.scss";
+@import "../../node_modules/bootstrap/scss/_type.scss";
+
+// core css
+@import "../../node_modules/bootstrap/scss/_grid.scss";
+@import "../../node_modules/bootstrap/scss/_modal.scss";
+
+// utility classes
+@import "../../node_modules/bootstrap/scss/_utilities.scss";

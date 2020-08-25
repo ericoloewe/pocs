@@ -1,0 +1,31 @@
+{
+  "name": "vtex-to-dynamodb",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "start": "nodemon --watch --inspect \"src/\" --exec \"ts-node src/index.ts\" -e ts",
+    "build": "tsc",
+    "debug": "node --inspect -r ts-node/register src/index.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "vtex",
+    "dynamodb"
+  ],
+  "author": "CWI",
+  "license": "ISC",
+  "dependencies": {
+    "aws-sdk": "^2.419.0",
+    "axios": "^0.18.0",
+    "axios-retry": "^3.1.2",
+    "dotenv": "^6.2.0"
+  },
+  "devDependencies": {
+    "@types/dotenv": "^6.1.0",
+    "nodemon": "^1.18.10",
+    "ts-node": "^8.0.3",
+    "tslint": "^5.13.1",
+    "typescript": "^3.3.3333"
+  }
+}

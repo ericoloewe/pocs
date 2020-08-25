@@ -1,0 +1,12 @@
+{
+  "pages": {
+    "dream-store": {
+      "path": "/store"
+    }
+  },
+  "extensions": {
+    "dream-store": {
+      "component": "ListProducts"
+    }
+  }
+}

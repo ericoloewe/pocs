@@ -1,0 +1,12 @@
+query ListProductsByRange ($from: Int, $to: Int) {
+  products(from: $from, to: $to) {
+    brand
+    categoryId
+    description
+    link
+    linkText
+    productId
+    productName
+    productReference
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "pages": {
+    "library": {
+      "path": "/io/library/"
+    }
+  },
+  "extensions": {
+    "library": {
+      "component": "index"
+    }
+  }
+}

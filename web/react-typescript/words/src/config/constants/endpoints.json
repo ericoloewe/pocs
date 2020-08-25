@@ -1,0 +1,6 @@
+{
+    "WORDS": {
+        "GET_ALL": "/word",
+        "SAVE": "/word"
+    }
+}

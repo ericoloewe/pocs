@@ -1,0 +1,38 @@
+{
+	"generator-angular-tccc": {	
+		"PATHS": {
+			"APP": {			
+				"SCRIPTS": {
+					"CONTROLLERS": "./app/scripts/controllers",
+					"DIRECTIVES": "./app/scripts/directives",
+					"SERVICES": "./app/scripts/services",
+					"INTERCEPTORS": "./app/scripts/interceptors"
+				},
+				"STYLES": {
+					"CONTROLLERS": "./app/stylesheets/controllers",
+					"DIRECTIVES": "./app/stylesheets/directives"
+				},
+				"VIEWS": {
+					"CONTROLLERS": "./app/views/controllers",
+					"DIRECTIVES": "./app/views/directives"
+				}
+			},
+			"DIST": {			
+				"SCRIPTS": {
+				},
+				"STYLES": {
+				},
+				"VIEWS": {
+					"CONTROLLERS": "controllers"
+				}
+			},
+			"CONFIGS": {
+				"APP": {
+					"STATES": "./app/miscellaneous/configs/states.json"
+				},
+				"ENVIROMENT": {
+				}
+			}
+		}
+	}
+}

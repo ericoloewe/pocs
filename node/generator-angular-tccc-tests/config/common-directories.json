@@ -1,0 +1,170 @@
+{
+  "constants": {
+    "distFileName": "constants.js",
+    "application": {
+      "destination": "./dist/scripts",
+      "files": [
+        "./app/miscellaneous/configs/*.json"
+      ]
+    },
+    "environment": {
+      "destination": "./dist/scripts",
+      "files": [
+        "./config/environments/*.json"
+      ]
+    }
+  },
+  "fonts": {
+    "own": {
+      "destination": "./dist/fonts",
+      "files": [
+        "./app/fonts/*.{eot,svg,ttf,woff,woff2}",
+        "./app/fonts/**/*.{eot,svg,ttf,woff,woff2}",
+        "./node_modules/dtfc-base/dist/fonts/*.{eot,svg,ttf,woff,woff2}",
+        "./node_modules/dtfc-base/dist/fonts/**/*.{eot,svg,ttf,woff,woff2}"
+      ]
+    },
+    "vendor": {
+      "destination": "./dist/fonts/vendor",
+      "files": [
+        "./node_modules/dtfc-base/dist/fonts/vendor/*.{eot,svg,ttf,woff,woff2}",
+        "./node_modules/dtfc-base/dist/fonts/vendor/**/*.{eot,svg,ttf,woff,woff2}"
+      ]
+    }
+  },
+  "images": {
+    "own": {
+      "destination": "./dist/images",
+      "files": [
+        "./app/images/*.{png,jpeg,jpg,gif,svg}",
+        "./app/images/**/*.{png,jpeg,jpg,gif,svg}"
+      ]
+    },
+    "svgs": {
+      "destination": "./dist/scripts",
+      "name": "svg-templates.js",
+      "minified": "svg-templates.min.js",
+      "files": [
+        "./dist/*.svg",
+        "./dist/**/*.svg"
+      ]
+    },
+    "vendor": {
+      "destination": "./dist/images/vendor",
+      "files": [
+        "./node_modules/dtfc-app-icon/dist/images/*.{png,jpeg,jpg,gif,svg}",
+        "./node_modules/dtfc-app-icon/dist/images/**/*.{png,jpeg,jpg,gif,svg}",
+        "./node_modules/dtfc-app-menu/dist/images/*.{png,jpeg,jpg,gif,svg}",
+        "./node_modules/dtfc-app-main-footer/dist/images/*.{png,jpeg,jpg,gif,svg}"
+      ]
+    }
+  },
+  "media": {
+    "own": {
+      "destination": "./dist/media",
+      "files": [
+        "./app/media/**/*.{mp4,webm,ogv,ogg}"
+      ]
+    },
+    "vendor": {
+      "destination": "./dist/media/vendor",
+      "files": []
+    }
+  },
+  "miscellaneous": {
+    "own": {
+      "destination": "./dist",
+      "files": [
+        "./app/miscellaneous/favicon.ico",
+        "./app/miscellaneous/robots.txt",
+        "./app/miscellaneous/sitemap.xml",
+		"./app/miscellaneous/manifest.json"
+      ]
+    },
+    "vendor": {
+      "destination": "./dist/miscellaneous/vendor",
+      "files": []
+    }
+  },
+  "scripts": {
+    "own": {
+      "distFileName": "all.min.js",
+      "destination": "./dist/scripts",
+      "distribution": [
+        "./dist/scripts/all.min.js",
+        "./dist/scripts/constants.js",
+        "./dist/scripts/templates.min.js",
+        "./dist/scripts/svg-templates.min.js"
+      ],
+      "files": [
+        "./app/scripts/*.js",
+        "./app/scripts/**/*.js",
+        "!./app/scripts/vendor/*.js",
+        "./node_modules/dtfc-*-provider/dist/*.min.js",
+        "./node_modules/dtfc-*-service/dist/*.min.js",
+        "./node_modules/dtfc-*-resource/dist/*.min.js",
+        "./node_modules/dtfc-*-interceptor/dist/*.min.js",
+        "./node_modules/dtfc-*-filter/dist/*.min.js",
+        "./node_modules/dtfc-app-*/dist/*.min.js"
+      ]
+    },
+    "vendor": {
+      "distFileName": "all.vendor.min.js",
+      "destination": "./dist/scripts/vendor",
+      "distribution": [
+        "./dist/scripts/vendor/all.vendor.min.js"
+      ],
+      "files": [
+        "./app/scripts/vendor/**/*.js",
+        "./node_modules/dtfc-base/dist/scripts/dtfc-base.js",
+        "./node_modules/angular-scroll/angular-scroll.min.js",
+        "./node_modules/intro.js/minified/intro.min.js",
+        "./node_modules/angular-intro.js/build/angular-intro.min.js",
+        "./node_modules/flexibility/flexibility.js"
+      ]
+    }
+  },
+  "styles": {
+    "own": {
+      "destination": "./dist/stylesheets",
+      "distribution": [
+        "./dist/stylesheets/all.min.{css,map}"
+      ],
+      "main": "./app/stylesheets/main.scss",
+      "files": [
+        "./app/stylesheets/*.scss",
+        "./app/stylesheets/**/*.scss",
+        "./node_modules/dtfc-app-*/src/*.scss"
+      ]
+    },
+    "vendor": {
+      "destination": "./dist/stylesheets/vendor",
+      "distribution": [
+        "./dist/stylesheets/vendor/all.vendor.min.{css,map}"
+      ],
+      "files": [
+        "./node_modules/intro.js/minified/introjs.min.css"
+      ]
+    }
+  },
+  "views": {
+    "own": {
+      "destination": "./dist/scripts",
+      "files": [
+        "!./app/views/index.pug",
+        "!./app/views/_*.pug",
+        "!./app/views/**/_*.pug",
+        "./app/views/*.pug",
+        "./app/views/**/*.pug",
+        "./node_modules/dtfc-app-menu/src/*.pug"
+      ]
+    },
+    "vendor": {
+      "destination": "./dist/scripts/vendor",
+      "files": []
+    }
+  },
+  "distribution": {
+    "path": "./dist"
+  }
+}

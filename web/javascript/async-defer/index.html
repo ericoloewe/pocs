@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Async defer test</title>
+</head>
+
+<body>
+    <h1>Check your console</h1>
+
+    <script async src="./async-big.js"></script>
+    <script async src="./async-small.js"></script>
+    <script defer src="./defer-big.js"></script>
+    <script defer src="./defer-small.js"></script>
+    <script async defer src="./async-defer-big.js"></script>
+    <script async defer src="./async-defer-small.js"></script>
+</body>
+
+</html>

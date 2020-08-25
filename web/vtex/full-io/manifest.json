@@ -1,0 +1,20 @@
+{
+  "name": "full-io",
+  "vendor": "cwi",
+  "version": "0.1.0",
+  "title": "Full io",
+  "description": "An app",
+  "mustUpdateAt": "2019-05-18",
+  "categories": [],
+  "registries": [
+    "smartcheckout"
+  ],
+  "settingsSchema": {},
+  "dependencies": {
+    "vtex.store-graphql": "2.x"
+  },
+  "builders": {
+    "pages": "0.x",
+    "react": "2.x"
+  }
+}

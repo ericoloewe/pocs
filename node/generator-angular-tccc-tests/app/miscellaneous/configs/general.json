@@ -1,0 +1,14 @@
+{
+  "APP_TITLE": "Coca-Cola / App Name",
+  "ANGULAR_APP_NAME": "app",
+  "PAGES_THAT_NOT_USE_THE_MENU": [
+    "access-denied"
+  ],
+  "CSRF": {
+    "METHODS": [
+      "POST",
+      "PUT",
+      "DELETE"
+    ]
+  }
+}

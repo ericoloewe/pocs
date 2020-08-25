@@ -1,0 +1,40 @@
+{
+
+  "CSRF": {
+    "UPDATE": "/api/csrf"
+  },
+
+  "UPLOAD": {
+    "FILE": "/api/upload/:domain"
+  },
+
+  "RANKING": {
+    "INDIVIDUAL": "/api/ranking/individual",
+    "PROJECTS": "/api/ranking/projects",
+    "MY_PROJECTS": "/api/ranking/my-projects",
+    "GATEKEEPERS": "/api/ranking/gatekeepers"
+  },
+
+  "LOGGED_USER": {
+    "AVATAR_UPLOAD": "/api/logged-user/change-avatar",
+    "INFO": "/api/logged-user/info",
+    "MARK_INTRO_AS_READ": "/api/logged-user/mark-intro-as-read"
+  },
+
+  "SESSION": "/api/session",
+  "USER_INFO": "/api/user-info",
+  "AVATAR_UPLOAD": "/api/change-avatar",
+
+  "GATE_RATING_LIST_PROJECTS": "/api/gate/rating/list-project",
+
+  "RATING_LIST_PROJECTS": "/api/rating/list-project",
+  "RATING_LIST_PROJECT_MEMBERS": "/api/rating/project-user/list-members/:projectId",
+  "RATING_LIST_GATEKEEPERS": "/api/rating/gatekeeper-user/list-members",
+  "RATING_LIST_PROJECT_MEMBERS_EVALUATION_INFO": "/api/rating/project-user/list-evaluation/:projectId/:userEvaluatedId",
+  "RATING_LIST_GATEKEEPERS_EVALUATION_INFO": "/api/rating/gatekeeper-user/list-evaluation/:userEvaluatedId",
+  "RATING_LIST_INNOVATION_TEAM_EVALUATION_INFO": "/api/rating/innovation-team/list-evaluation",
+  "YOUR_SCORE": "/api/your-score",
+
+  "EVALUATION_SAVE_SCORE": "/api/score/save"
+
+}

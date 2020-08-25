@@ -1,0 +1,14 @@
+[
+    {
+        "url": "",
+        "controller": "Bootstrap"
+    },
+    {
+        "url": "home",
+        "controller": "HomeController"
+    },
+    {
+        "url": "about",
+        "controller": "AboutController"
+    }
+]

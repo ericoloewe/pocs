@@ -1,0 +1,27 @@
+{
+  "name": "e-cwi",
+  "vendor": "cwi",
+  "version": "0.1.0",
+  "title": "E CWI",
+  "description": "",
+  "mustUpdateAt": "2019-03-13",
+  "categories": [],
+  "registries": [
+    "smartcheckout"
+  ],
+  "settingsSchema": {},
+  "dependencies": {},
+  "builders": {
+    "graphql": "1.x",
+    "node": "3.x"
+  },
+  "policies": [
+    {
+      "name": "outbound-access",
+      "attrs": {
+        "host": "httpstat.us",
+        "path": "/*"
+      }
+    }
+  ]
+}

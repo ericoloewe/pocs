@@ -1,0 +1,20 @@
+{
+  "name": "io-react",
+  "version": "0.0.1",
+  "description": "A vtex io project",
+  "keywords": [
+    "react",
+    "vtex",
+    "vtex-io"
+  ],
+  "author": "CWI - SOFTWARE",
+  "dependencies": {
+    "bootstrap": "^4.0.0",
+    "graphql": "^0.13.1",
+    "graphql-tag": "^2.8.0",
+    "prop-types": "^15.6.1",
+    "react": "^16.2.0",
+    "react-apollo": "^2.0.4",
+    "react-json-tree": "^0.11.0"
+  }
+}

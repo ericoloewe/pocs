@@ -1,0 +1,18 @@
+{
+  "name": "alu-bottle",
+  "vendor": "cwi",
+  "version": "0.2.0",
+  "title": "Alu bottle",
+  "description": "",
+  "mustUpdateAt": "2019-03-20",
+  "categories": [],
+  "registries": [
+    "smartcheckout"
+  ],
+  "settingsSchema": {},
+  "dependencies": {},
+  "builders": {
+    "pages": "0.x",
+    "react": "2.x"
+  }
+}

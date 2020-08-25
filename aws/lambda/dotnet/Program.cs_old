@@ -1,0 +1,72 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Net.Http;
+using System.Threading.Tasks;
+using Amazon;
+using Amazon.CognitoIdentity;
+using Amazon.DynamoDBv2;
+using Amazon.DynamoDBv2.DataModel;
+
+namespace dotnet
+{
+    [DynamoDBTable("Customers")]
+    class Customer
+    {
+        [DynamoDBHashKey]
+        public string id { get; set; }
+        [DynamoDBRangeKey]
+        public string email { get; set; }
+    }
+
+    class Program
+    {
+        static System.Net.Http.HttpClient httpClient = new System.Net.Http.HttpClient();
+        static CognitoAWSCredentials cognitoAWSCredentials = new CognitoAWSCredentials("us-east-2:7ab36441-5388-4086-b98c-738210a489a6", RegionEndpoint.USEast2);
+        static AmazonDynamoDBClient amazonDynamoDBClient = new AmazonDynamoDBClient(cognitoAWSCredentials, RegionEndpoint.USEast2);
+        static DynamoDBContext dynamoDBContext = new DynamoDBContext(amazonDynamoDBClient);
+
+        static void Main(string[] args)
+        {
+            Stopwatch stopWatch = new Stopwatch();
+
+            httpClient.BaseAddress = new Uri("https://ecoke.vtexcommercestable.com.br/");
+            httpClient.DefaultRequestHeaders.Accept.Clear();
+            httpClient.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
+            httpClient.DefaultRequestHeaders.Add("x-vtex-api-appKey", VTEXApiKeys.VTEX_APIKEY);
+            httpClient.DefaultRequestHeaders.Add("x-vtex-api-appToken", VTEXApiKeys.VTEX_APPTOKEN);
+
+            stopWatch.Start();
+            MakeRequestAsync().Wait();
+            stopWatch.Stop();
+
+            Console.WriteLine($"Time spent: {stopWatch.Elapsed}");
+        }
+
+        static async Task MakeRequestAsync()
+        {
+
+            var rParsed = await LoadCustomers();
+
+            foreach (var item in rParsed)
+            {
+                await dynamoDBContext.SaveAsync(item);
+            }
+
+            Console.WriteLine($"There was a problem to make request");
+        }
+
+        static async Task<IList<Customer>> LoadCustomers()
+        {
+            var response = await httpClient.GetAsync("api/dataentities/CL/search");
+            // var rString = await response.Content.ReadAsStringAsync();
+
+            if (response.IsSuccessStatusCode)
+            {
+                return await response.Content.ReadAsAsync<IList<Customer>>();
+            }
+
+            throw new Exception("Can't load your data!");
+        }
+    }
+}

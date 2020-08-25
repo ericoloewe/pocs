@@ -1,0 +1,25 @@
+{
+  "name": "io-test",
+  "vendor": "cwi",
+  "version": "1.0.1",
+  "title": "IO test",
+  "description": "Our IO test",
+  "mustUpdateAt": "2019-05-23",
+  "registries": [
+    "smartcheckout"
+  ],
+  "scripts": {
+    "postreleasy": "vtex publish --public"
+  },
+  "builders": {
+    "node": "3.x",
+    "graphql": "1.x",
+    "react": "2.x",
+    "pages": "0.x"
+  },
+  "policies": [
+    {
+      "name": "resolve-graphql"
+    }
+  ]
+}
