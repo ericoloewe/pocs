@@ -1,0 +1,28 @@
+# Queries
+
+type Review {
+  id: ID!
+  author: String
+  comment: Comment
+}
+
+type Comment {
+  timestamp: String
+  text: String
+}
+
+type Query {
+  review(id: ID!): Review @smartcache
+  listReviews: [Review] @smartcache
+}
+
+# Mutations
+
+input ReviewInput {
+  author: String
+  comment: String
+}
+
+type Mutation {
+  addReview(review: ReviewInput): ID!
+}

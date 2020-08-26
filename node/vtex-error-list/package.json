@@ -1,0 +1,18 @@
+{
+  "name": "vtex-error-list",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm i && node index.js"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "inquirer": "^5.1.0",
+    "moment": "^2.21.0",
+    "progress": "^2.0.0",
+    "request": "^2.83.0",
+    "xlsx": "^0.12.4"
+  }
+}

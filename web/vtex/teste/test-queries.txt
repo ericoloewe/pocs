@@ -1,0 +1,24 @@
+# query {
+#   listReviews {
+#     id
+#     author
+#   }
+# }
+
+# query {
+#   review(id: 14000735) {
+#     id
+#     author
+#     comment {
+#       timestamp
+#       text
+#     }
+#   }
+# }
+
+# mutation {
+#   addReview(review:{
+#     author: "Victor Elias"
+#     comment: "Great experience"
+#   })
+# }

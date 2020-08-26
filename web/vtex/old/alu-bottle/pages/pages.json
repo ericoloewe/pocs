@@ -1,0 +1,12 @@
+{
+  "pages": {
+    "alu-bottle": {
+      "path": "/alu-bottle"
+    }
+  },
+  "extensions": {
+    "alu-bottle": {
+      "component": "index"
+    }
+  }
+}

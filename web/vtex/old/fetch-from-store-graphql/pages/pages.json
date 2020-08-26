@@ -1,0 +1,18 @@
+{
+  "pages": {
+    "legacy-example-shelf": {
+      "path": "/legacy-extensions/shelf-example"
+    },
+    "render-example-shelf": {
+      "path": "/_v/shelf-example"
+    }
+  },
+  "extensions": {
+    "legacy-example-shelf": {
+      "component": "ShelfExample"
+    },
+    "render-example-shelf": {
+      "component": "ShelfExample"
+    }
+  }
+}

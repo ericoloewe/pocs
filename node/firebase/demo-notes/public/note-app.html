@@ -1,0 +1,16 @@
+<link rel="import" href="bower_components/note-app-elements/na-elements.html">
+<link rel="import" href="bower_components/app-storage/app-indexeddb-mirror/app-indexeddb-mirror.html">
+<link rel="import" href="bower_components/polymerfire/polymerfire.html">
+
+<dom-module id="note-app">
+  <template>
+    <style include="note-app-shared-styles"></style>
+    <na-toolbar></na-toolbar>
+    <na-login></na-login>
+  </template>
+  <script>
+    Polymer({
+      is: 'note-app'
+    });
+  </script>
+</dom-module>

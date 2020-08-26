@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>On before unload</title>
+</head>
+<body>
+    
+	<script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+	<script>
+		$(function() {
+			$(window).on('beforeunload', function() {
+			  $.ajax({
+				method: "GET",
+				url: "https://www.google.com.br",
+				async: false
+			  }).finally(function()  {
+			  	alert("HERE");
+			  });
+
+			  return "TESTE";
+			});
+		});
+	</script>
+</body>
+</html>

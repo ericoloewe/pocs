@@ -1,0 +1,11 @@
+node_modules/
+.editorconfig
+.eslintrc
+.gitignore
+README.md
+
+# own files
+.babelrc
+webpack.config.js
+src/
+webpack/

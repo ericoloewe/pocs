@@ -1,0 +1,24 @@
+{
+  "name": "react-graphql",
+  "vendor": "cwi",
+  "version": "0.1.0",
+  "title": "React graphql",
+  "description": "",
+  "mustUpdateAt": "2019-04-03",
+  "registries": [
+    "smartcheckout"
+  ],
+  "scripts": {
+    "postreleasy": "vtex publish --public"
+  },
+  "builders": {
+    "graphql": "1.x",
+    "react": "2.x",
+    "pages": "0.x"
+  },
+  "policies": [
+    {
+      "name": "full-access"
+    }
+  ]
+}

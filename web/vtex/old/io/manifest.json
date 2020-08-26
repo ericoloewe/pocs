@@ -1,0 +1,56 @@
+{
+  "name": "e-cwi",
+  "vendor": "cwi",
+  "version": "0.1.1",
+  "title": "E CWI",
+  "description": "",
+  "mustUpdateAt": "2019-03-13",
+  "registries": [
+    "smartcheckout"
+  ],
+  "scripts": {
+    "start": "npm i && npm run dev",
+    "dev": "start npm run webpack && vtex link --verbose",
+    "webpack": "webpack -w --progress --mode development",
+    "postreleasy": "vtex publish --public"
+  },
+  "builders": {
+    "react": "2.x",
+    "pages": "0.x"
+  },
+  "policies": [
+    {
+      "name": "full-access"
+    }
+  ],
+  "dependencies": {
+    "vtex.store-graphql": "1.x"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.4",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-es2015-spread": "^6.22.0",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-register": "^6.26.0",
+    "clean-webpack-plugin": "^0.1.19",
+    "copy-webpack-plugin": "^4.5.1",
+    "css-loader": "^0.28.10",
+    "extract-text-webpack-plugin": "^4.0.0-beta.0",
+    "file-loader": "^1.1.11",
+    "graphql": "^0.13.1",
+    "graphql-tag": "^2.8.0",
+    "json-loader": "^0.5.7",
+    "node-sass": "^4.7.2",
+    "sass-loader": "^6.0.7",
+    "style-loader": "^0.20.3",
+    "uglifyjs-webpack-plugin": "^1.2.3",
+    "vtex": "^2.x",
+    "webpack": "^4.1.1",
+    "webpack-cli": "^2.0.12",
+    "webpack-merge": "^4.1.2"
+  }
+}

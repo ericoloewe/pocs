@@ -1,0 +1,21 @@
+{
+  "name": "fetch-from-service-dependency",
+  "vendor": "vtex",
+  "version": "0.1.0",
+  "title": "Fetch Sample",
+  "description": "",
+  "mustUpdateAt": "2018-09-21",
+  "categories": [
+    "smartcheckout"
+  ],
+  "registries": [
+    "smartcheckout"
+  ],
+  "dependencies": {
+    "vtex.serve-users-list": "0.x"
+  },
+  "settingsSchema": {},
+  "builders": {
+    "react": "0.x"
+  }
+}

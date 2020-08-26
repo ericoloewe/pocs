@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Words</title>
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="index.css">
+    </head>
+
+    <body>
+        <header class="container">
+            <div class="page-header">
+                <h1>Words</h1>
+            </div>
+        </header>
+
+        <article class="container">
+            <section>
+                <form class="word-form well">
+                    <div class="form-group">
+                        <label for="wordName">Name</label>
+                        <input type="text" id="wordName" name="wordName" class="form-control" placeholder="Name">
+                    </div>
+                    <div class="form-action">
+                        <button class="btn btn-default">
+                            Salvar
+                        </button>
+                    </div>
+                </form>
+            </section>
+            <section>
+                <ul class="word-list list-group">
+                    <li class="list-group-item alert-info">
+                        Lista vazia
+                    </li>
+                </ul>
+            </section>
+        </article>
+
+        <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="https://unpkg.com/redux@latest/dist/redux.js"></script>
+        <script type="text/javascript" src="models.js"></script>
+        <script type="text/javascript" src="actions.js"></script>
+        <script type="text/javascript" src="reducers.js"></script>
+        <script type="text/javascript" src="stores.js"></script>
+        <script type="text/javascript" src="index.js"></script>
+    </body>
+
+</html>

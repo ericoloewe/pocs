@@ -1,0 +1,23 @@
+{
+  "vendor": "vtex",
+  "name": "render-runtime",
+  "version": "7.7.1",
+  "title": "VTEX Render runtime",
+  "description": "The VTEX Render framework runtime",
+  "defaultLocale": "pt-BR",
+  "builders": {
+    "react": "2.x"
+  },
+  "dependencies": {
+    "vtex.pages-graphql": "1.x"
+  },
+  "mustUpdateAt": "2018-09-05",
+  "categories": [],
+  "registries": [
+    "smartcheckout"
+  ],
+  "settingsSchema": {},
+  "scripts": {
+    "postreleasy": "vtex publish --public"
+  }
+}

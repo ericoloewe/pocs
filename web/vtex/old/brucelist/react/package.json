@@ -1,0 +1,19 @@
+{
+  "name": "brucelist",
+  "version": "1.0.0",
+  "description": "A list should adapt, like water",
+  "main": "index.js",
+  "dependencies": {
+    "@vtex/styleguide": "^2.0.0-rc.25",
+    "axios": "^0.18.0",
+    "qrcode.react": "^0.8.0",
+    "quagga": "^0.12.1",
+    "react-cookie": "^0.4.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"no tests, sorry\""
+  },
+  "author": "",
+  "license": "MIT"
+}

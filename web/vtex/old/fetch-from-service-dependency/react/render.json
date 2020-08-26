@@ -1,0 +1,16 @@
+{
+  "extensions": {
+    "sample-app.sample": {
+      "component": "./sample",
+      "route": {
+        "path": "/sample"
+      }
+    },
+    "sample-app.hello": {
+      "component": "./index",
+      "route": {
+        "path": "/hello"
+      }
+    }
+  }
+}

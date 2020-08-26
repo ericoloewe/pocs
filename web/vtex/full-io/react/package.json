@@ -1,0 +1,14 @@
+{
+  "name": "dreamstore-getting-started",
+  "version": "1.0.0",
+  "author": "vtex",
+  "license": "MIT",
+  "dependencies": {
+    "react": "^16.3.2",
+    "react-apollo": "^2.1.4",
+    "@vtex/styleguide": "^2.0.0-rc.35"
+  },
+  "devDependencies": {
+    "@types/react": "^16.3.14"
+  }
+}

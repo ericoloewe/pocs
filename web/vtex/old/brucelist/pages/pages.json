@@ -1,0 +1,13 @@
+{
+  "pages": {
+    "brucelist": {
+      "path": "/brucelist",
+      "theme": "theme"
+    }
+  },
+  "extensions": {
+    "brucelist": {
+      "component": "index"
+    }
+  }
+}

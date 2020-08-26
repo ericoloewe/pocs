@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Words</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="./index.css">
+</head>
+
+<body>
+  <div class="container">
+    <div class="search">
+      <h1>Words</h1>
+      <form class="form">
+        <div class="form-group">
+          <input type="text" class="form-control" id="searchInput" aria-describedby="searchInput" placeholder="Type something">
+        </div>
+      </form>
+      <ul id="searchResult" class="result list-group">
+      </ul>
+    </div>
+  </div>
+  <script src="https://www.gstatic.com/firebasejs/5.8.0/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyDKqg6fRmNpDg9MHFIRDw-mYUmV5aVVcvg",
+      authDomain: "words-fd97b.firebaseapp.com",
+      databaseURL: "https://words-fd97b.firebaseio.com",
+      projectId: "words-fd97b",
+      storageBucket: "words-fd97b.appspot.com",
+      messagingSenderId: "846002839963"
+    };
+
+    firebase.initializeApp(config);
+  </script>
+  <script src="./index.js"></script>
+  <script src="./firebase.js"></script>
+  <script src="./search.js"></script>
+</body>
+
+</html>

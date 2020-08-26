@@ -1,0 +1,28 @@
+{
+  "name": "graphql",
+  "vendor": "cwi",
+  "version": "0.1.0",
+  "title": "",
+  "description": "",
+  "mustUpdateAt": "2019-04-03",
+  "categories": [],
+  "registries": [
+    "smartcheckout"
+  ],
+  "settingsSchema": {},
+  "dependencies": {},
+  "builders": {
+    "graphql": "1.x",
+    "node": "3.x"
+  },
+  "credentialType": "absolute",
+  "policies": [
+    {
+      "name": "outbound-access",
+      "attrs": {
+        "host": "httpstat.us",
+        "path": "/*"
+      }
+    }
+  ]
+}

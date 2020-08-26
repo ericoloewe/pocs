@@ -1,0 +1,11 @@
+.DS_Store
+.git
+node_modules/
+node/node_modules/
+node/yarn.lock
+node/tslint.json
+react/node_modules/
+.vscode/
+.gitignore
+typings.d.ts
+yarn.lock

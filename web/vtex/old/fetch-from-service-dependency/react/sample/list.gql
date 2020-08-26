@@ -1,0 +1,7 @@
+query List{
+    list{
+        first_name,
+        last_name,
+        id
+    }
+}

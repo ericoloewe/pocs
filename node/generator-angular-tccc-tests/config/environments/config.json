@@ -1,0 +1,15 @@
+{
+
+  "dev": {
+    "IS_DEBUG_ENABLED": true
+  },
+
+  "hml": {
+    "IS_DEBUG_ENABLED": false
+  },
+
+  "pro": {
+    "IS_DEBUG_ENABLED": false
+  }
+
+}

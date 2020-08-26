@@ -1,0 +1,14 @@
+{
+  "HOME": {
+    "name": "home",
+    "url": "/home",
+    "controller": "profileListCtl",
+    "templateUrl": "controllers/profile/profileList.html"
+  },
+  "MY": {
+    "name": "my",
+    "url": "/my",
+    "controller": "MyCtl",
+    "templateUrl": "controllers/my.html"
+  }
+}
