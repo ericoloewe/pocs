@@ -1,0 +1,104 @@
+{
+  "commons": {
+    "dev": [
+      {
+        "path": "https://unpkg.com/regenerator-runtime@0.11.1/runtime.js"
+      },
+      {
+        "global": "PropTypes",
+        "import": "prop-types",
+        "path": "https://unpkg.com/prop-types@15.6.1/prop-types.js"
+      },
+      {
+        "global": "React",
+        "import": "react",
+        "path": "https://unpkg.com/react@16.3.2/umd/react.development.js"
+      },
+      {
+        "global": "ReactDOM",
+        "import": "react-dom",
+        "path": "https://unpkg.com/react-dom@16.3.2/umd/react-dom.development.js"
+      },
+      {
+        "global": "ReactDOMServer",
+        "import": "react-dom/server",
+        "path": "https://unpkg.com/react-dom@16.3.2/umd/react-dom-server.browser.development.js",
+        "serverOnly": true
+      },
+      {
+        "path": "https://unpkg.com/intl@1.2.5/dist/Intl.js",
+        "serverOnly": true
+      },
+      {
+        "path": "https://unpkg.com/animate.css@3.6.1/animate.css"
+      },
+      {
+        "path": "https://unpkg.com/vtex-tachyons@2.4.0/tachyons.css"
+      }
+    ],
+    "prod": [
+      {
+        "path": "https://unpkg.com/regenerator-runtime@0.11.1/runtime.js"
+      },
+      {
+        "global": "PropTypes",
+        "import": "prop-types",
+        "path": "https://unpkg.com/prop-types@15.6.1/prop-types.min.js"
+      },
+      {
+        "global": "React",
+        "import": "react",
+        "path": "https://unpkg.com/react@16.3.2/umd/react.production.min.js"
+      },
+      {
+        "global": "ReactDOM",
+        "import": "react-dom",
+        "path": "https://unpkg.com/react-dom@16.3.2/umd/react-dom.production.min.js"
+      },
+      {
+        "global": "ReactDOMServer",
+        "import": "react-dom/server",
+        "path": "https://unpkg.com/react-dom@16.3.2/umd/react-dom-server.browser.production.min.js",
+        "serverOnly": true
+      },
+      {
+        "path": "https://unpkg.com/intl@1.2.5/dist/Intl.min.js",
+        "serverOnly": true
+      },
+      {
+        "path": "https://unpkg.com/animate.css@3.6.1/animate.min.css"
+      },
+      {
+        "path": "https://unpkg.com/vtex-tachyons@2.4.0/tachyons.min.css"
+      }
+    ]
+  },
+  "vtex": {
+    "dev": [
+      {
+        "clientOnly": true,
+        "defer": false,
+        "path": "https://io.vtex.com.br/rc/rc.js"
+      }
+    ],
+    "prod": [
+      {
+        "clientOnly": true,
+        "defer": false,
+        "path": "https://io.vtex.com.br/rc/rc.js"
+      }
+    ]
+  },
+  "gocommerce": {
+    "dev": [
+      {
+        "path": "https://unpkg.com/@gocommerce/tachyons/tachyons.css"
+      }
+    ],
+    "prod": [
+      {
+        "path": "https://unpkg.com/@gocommerce/tachyons/tachyons.min.css"
+      }
+    ]
+  }
+}

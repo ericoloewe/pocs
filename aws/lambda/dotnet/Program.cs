@@ -19,7 +19,7 @@ namespace dotnet
         public string email { get; set; }
     }
 
-    [Headers("x-vtex-api-appKey: vtexappkey-ecoke-VWHVPD\nx-vtex-api-appToken: RVQCECLNBKOGKJCOVJDGOZCYXTIHWGZVTFYTVZFQJGQLLKRYSSZUSQFRSRFLUERVLSNEKJTWDNWHIRNMCJPDHEDDAHBDTTVEPVZSXMNJZCRFTXIBESJLPOOHPJEDIPDJ")]
+    [Headers("x-vtex-api-appKey: vtexappkey-ecoke-VWHVPD\nx-vtex-api-appToken: ----------")]
     public interface IVTEXCustomersApi
     {
         [Get("/api/dataentities/CL/search")]
@@ -29,7 +29,7 @@ namespace dotnet
     public class Program
     {
         static IVTEXCustomersApi VTEXCustomersApi = RestService.For<IVTEXCustomersApi>("https://ecoke.vtexcommercestable.com.br/");
-        static CognitoAWSCredentials cognitoAWSCredentials = new CognitoAWSCredentials("us-east-2:7ab36441-5388-4086-b98c-738210a489a6", Amazon.RegionEndpoint.USEast2);
+        static CognitoAWSCredentials cognitoAWSCredentials = new CognitoAWSCredentials("us-east-2:--------------", Amazon.RegionEndpoint.USEast2);
         static AmazonDynamoDBClient amazonDynamoDBClient = new AmazonDynamoDBClient(cognitoAWSCredentials, Amazon.RegionEndpoint.USEast2);
         static DynamoDBContext dynamoDBContext = new DynamoDBContext(amazonDynamoDBClient);
 

@@ -7,7 +7,7 @@
     AWS.config.update({
       region: "us-east-2",
       credentials: new AWS.CognitoIdentityCredentials({
-        IdentityPoolId: 'us-east-2:7ab36441-5388-4086-b98c-738210a489a6',
+        IdentityPoolId: '-',
       })
       //   // The endpoint should point to the local or remote computer where DynamoDB (downloadable) is running.
       //   endpoint: 'https://dynamodb.us-east-2.amazonaws.com',
@@ -15,8 +15,6 @@
       //     accessKeyId and secretAccessKey defaults can be used while using the downloadable version of DynamoDB. 
       //     For security reasons, do not store AWS Credentials in your files. Use Amazon Cognito instead.
       //   */
-      //   accessKeyId: "pIgnGEIHnPoQfEFtuWZJjIqqnRV9iyjQcjatWfS1",
-      //   secretAccessKey: "AKIAJPOTY5P52M2I6OMA"
     });
 
     /* 
@@ -25,16 +23,6 @@
        Make sure Cognito is available in the DynamoDB web service region (specified above).
        Finally, modify the IdentityPoolId and the RoleArn with your own.
     */
-
-    // AWS.config.region = 'us-east-2'; // Region
-    // AWS.config.credentials = new AWS.CognitoIdentityCredentials({
-    //   IdentityPoolId: 'us-east-2:7ab36441-5388-4086-b98c-738210a489a6',
-    // });
-
-    // AWS.config.credentials = new AWS.CognitoIdentityCredentials({
-    //   IdentityPoolId: "us-east-2:7ab36441-5388-4086-b98c-738210a489a6",
-    //   RoleArn: "arn:aws:iam::850504530616:user/DynamoDB",
-    // });
 
 
     var dynamodb = new AWS.DynamoDB();

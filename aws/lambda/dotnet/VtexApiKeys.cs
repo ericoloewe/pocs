@@ -10,7 +10,7 @@ namespace dotnet
 {
     class VTEXApiKeys
     {
-        public static string VTEX_APIKEY { get { return "vtexappkey-ecoke-VWHVPD"; } }
-        public static string VTEX_APPTOKEN { get { return "RVQCECLNBKOGKJCOVJDGOZCYXTIHWGZVTFYTVZFQJGQLLKRYSSZUSQFRSRFLUERVLSNEKJTWDNWHIRNMCJPDHEDDAHBDTTVEPVZSXMNJZCRFTXIBESJLPOOHPJEDIPDJ"; } }
+        public static string VTEX_APIKEY { get { return "vtexappkey-ecoke---------"; } }
+        public static string VTEX_APPTOKEN { get { return "-----------"; } }
     }
 }

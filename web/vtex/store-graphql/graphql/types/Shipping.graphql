@@ -1,0 +1,36 @@
+type ShippingData {
+  logisticsInfo: [LogisticsInfo],
+  messages: [MessageInfo]
+}
+
+type MessageInfo {
+  code: String,
+  text: String,
+  status: String,
+  fields: MessageFields
+}
+
+type MessageFields {
+  itemIndex: String
+  ean: String
+  skuName: String
+}
+
+type LogisticsInfo {
+  itemIndex: String
+  slas: [ShippingSLA]
+}
+
+type ShippingSLA {
+  id: String
+  name: String
+  price: Float
+  shippingEstimate: String
+  shippingEstimateDate: String
+}
+
+input ShippingItem {
+  id: String,
+  quantity: String,
+  seller: String
+}

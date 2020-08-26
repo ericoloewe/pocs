@@ -1,0 +1,21 @@
+type Facets {
+  Departments: [Facet]
+  Brands: [Facet]
+  SpecificationFilters: [Filter]
+  CategoriesTrees: [Facet]
+  PriceRanges: [Facet]
+}
+
+type Facet {
+  Id: Int
+  Name: IOMessage!
+  Quantity: Int!
+  Link: String!
+  Slug: String
+  Children: [Facet]
+}
+
+type Filter {
+  name: String
+  facets: [Facet]
+}

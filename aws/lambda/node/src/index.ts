@@ -9,7 +9,7 @@ const vtexApiClient = new VtexApiClient({ 'x-vtex-api-appKey': process.env.VTEX_
 AWS.config.update({
   region: "us-east-2",
   credentials: new AWS.CognitoIdentityCredentials({
-    IdentityPoolId: 'us-east-2:7ab36441-5388-4086-b98c-738210a489a6',
+    IdentityPoolId: 'us-east-2:--------------------------',
   }),
 });
 
