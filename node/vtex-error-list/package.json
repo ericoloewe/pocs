@@ -10,7 +10,7 @@
   "license": "MIT",
   "dependencies": {
     "inquirer": "^5.1.0",
-    "moment": "^2.21.0",
+    "moment": "^2.29.2",
     "progress": "^2.0.0",
     "request": "^2.83.0",
     "xlsx": "^0.12.4"
