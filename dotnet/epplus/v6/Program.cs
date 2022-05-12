@@ -14,19 +14,38 @@ namespace v6
 
             using ExcelPackage github = new ExcelPackage(File.OpenRead("../../../../github_example.xlsx"));
 
+            Console.WriteLine($"GITHUB");
+
+            github.Workbook.Calculate();
+
+            Console.WriteLine($"C29: {github.Workbook.Worksheets["Summary"].Cells["C29"].Value}");
             Console.WriteLine($"C29: {github.Workbook.Worksheets["Summary"].Cells["C29"].Value}");
             Console.WriteLine($"S6123: {github.Workbook.Worksheets["Details"].Cells["S6123"].Value}");
-            
+
             using ExcelPackage getnet = new ExcelPackage(File.OpenRead("../../../../getnet_errors.xlsx"));
+
+            Console.WriteLine($"GETNET");
+
+            getnet.Workbook.Calculate();
 
             Console.WriteLine($"B1: {getnet.Workbook.Worksheets["Plan1"].Cells["B1"].Value}");
             Console.WriteLine($"B2: {getnet.Workbook.Worksheets["Plan1"].Cells["B2"].Value}");
-            
+
             Console.WriteLine($"E1: {getnet.Workbook.Worksheets["Plan1"].Cells["E1"].Value}");
             Console.WriteLine($"E2: {getnet.Workbook.Worksheets["Plan1"].Cells["E2"].Value}");
-            
+
             Console.WriteLine($"H1: {getnet.Workbook.Worksheets["Plan1"].Cells["H1"].Value}");
             Console.WriteLine($"H2: {getnet.Workbook.Worksheets["Plan1"].Cells["H2"].Value}");
+
+            using ExcelPackage motor = new ExcelPackage(File.OpenRead("../../../../motor.xlsm"));
+
+            Console.WriteLine($"MOTOR");
+
+            motor.Workbook.Calculate();
+
+            Console.WriteLine($"B13: {motor.Workbook.Worksheets["Output"].Cells["B13"].Value}");
+            Console.WriteLine($"B14: {motor.Workbook.Worksheets["Output"].Cells["B14"].Value}");
+            Console.WriteLine($"B15: {motor.Workbook.Worksheets["Output"].Cells["B15"].Value}");
 
             Console.ReadKey();
         }
