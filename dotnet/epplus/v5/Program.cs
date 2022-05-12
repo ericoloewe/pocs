@@ -36,6 +36,11 @@ namespace v5
 
             Console.WriteLine($"H1: {getnet.Workbook.Worksheets["Plan1"].Cells["H1"].Value}");
             Console.WriteLine($"H2: {getnet.Workbook.Worksheets["Plan1"].Cells["H2"].Value}");
+            
+            Console.WriteLine($"K1: {getnet.Workbook.Worksheets["Plan1"].Cells["K1"].Value}");
+            Console.WriteLine($"K2: {getnet.Workbook.Worksheets["Plan1"].Cells["K2"].Value}");
+            Console.WriteLine($"K3: {getnet.Workbook.Worksheets["Plan1"].Cells["K3"].Value}");
+            Console.WriteLine($"K4: {getnet.Workbook.Worksheets["Plan1"].Cells["K4"].Value}");
 
             using ExcelPackage motor = new ExcelPackage(File.OpenRead("../../../../motor.xlsm"));
 
