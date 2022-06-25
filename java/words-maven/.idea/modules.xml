@@ -4,6 +4,8 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/business/business.iml" filepath="$PROJECT_DIR$/business/business.iml" />
       <module fileurl="file://$PROJECT_DIR$/console/console.iml" filepath="$PROJECT_DIR$/console/console.iml" />
+      <module fileurl="file://$PROJECT_DIR$/webapi/webapi.iml" filepath="$PROJECT_DIR$/webapi/webapi.iml" />
+      <module fileurl="file://$PROJECT_DIR$/webapp/webapp.iml" filepath="$PROJECT_DIR$/webapp/webapp.iml" />
       <module fileurl="file://$PROJECT_DIR$/words-maven.iml" filepath="$PROJECT_DIR$/words-maven.iml" />
     </modules>
   </component>
