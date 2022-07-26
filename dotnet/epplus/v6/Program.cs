@@ -1,6 +1,7 @@
 ﻿using OfficeOpenXml;
 using System;
 using System.IO;
+using System.Linq;
 
 namespace v6
 {
@@ -24,7 +25,9 @@ namespace v6
 
             using ExcelPackage getnet = new ExcelPackage(File.OpenRead("../../../../getnet_errors.xlsx"));
 
-            Console.WriteLine($"GETNET");
+            var worksheet = getnet.Workbook.Worksheets.First();
+
+            Console.WriteLine($"GETNET => {worksheet.Name}");
 
             getnet.Workbook.Calculate();
 
@@ -46,7 +49,7 @@ namespace v6
 
             Console.WriteLine($"MOTOR");
 
-            motor.Workbook.Calculate();
+            //motor.Workbook.Calculate();
 
             Console.WriteLine($"B13: {motor.Workbook.Worksheets["Output"].Cells["B13"].Value}");
             Console.WriteLine($"B14: {motor.Workbook.Worksheets["Output"].Cells["B14"].Value}");

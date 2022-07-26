@@ -3,15 +3,13 @@ using System;
 using System.IO;
 using System.Linq;
 
-namespace v5
+namespace v4
 {
     class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World v5!");
-
-            ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
+            Console.WriteLine("Hello World v4!");
 
             using ExcelPackage github = new ExcelPackage(File.OpenRead("../../../../github_example.xlsx"));
 
