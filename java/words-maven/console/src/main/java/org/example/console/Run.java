@@ -1,6 +1,6 @@
 package org.example.console;
 
-import org.example.business.WordsBusiness;
+//import org.example.business.WordsBusiness;
 
 import java.math.BigDecimal;
 import java.math.BigInteger;
@@ -12,12 +12,13 @@ import java.util.*;
 import java.util.regex.Pattern;
 
 public class Run {
-    private static final WordsBusiness business = new WordsBusiness();
+//    private static final WordsBusiness business = new WordsBusiness();
 
     public static void main(String[] args) {
+        System.out.println("HEREEE");
 //        asd();
 
-        calculation(new String[] {"Sweater $36 12%","Shirt 12 50%",});
+        // calculation(new String[] {"Sweater $36 12%","Shirt 12 50%",});
     }
 
     private static void asd() {
@@ -27,7 +28,6 @@ public class Run {
         var b = Integer.parseInt(scanner.nextLine());
 
 
-        System.out.printf("%s", business.one());
         System.out.printf("%d", 1);
         System.out.printf("%f", 1.5);
         System.out.printf("%15s%s", "str, number", "");

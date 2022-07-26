@@ -17,7 +17,7 @@
       <module name="business" target="15" />
       <module name="console" target="15" />
       <module name="webapi" target="15" />
-      <module name="webapp" target="11" />
+      <module name="webapp" target="1.5" />
       <module name="words-maven" target="15" />
     </bytecodeTargetLevel>
   </component>
