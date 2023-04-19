@@ -1,7 +1,6 @@
 ﻿using OfficeOpenXml;
 using System;
 using System.IO;
-using System.Linq;
 
 namespace v5
 {
@@ -12,6 +11,12 @@ namespace v5
             Console.WriteLine("Hello World v5!");
 
             ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
+
+            using ExcelPackage index = new ExcelPackage(File.OpenRead("../../../../index_error.xlsx"));
+
+            var worksheet = index.Workbook.Worksheets[0];
+
+            Console.WriteLine($"Index OK => {worksheet.Name}");
 
             using ExcelPackage github = new ExcelPackage(File.OpenRead("../../../../github_example.xlsx"));
 
@@ -25,9 +30,7 @@ namespace v5
 
             using ExcelPackage getnet = new ExcelPackage(File.OpenRead("../../../../getnet_errors.xlsx"));
 
-            var worksheet = getnet.Workbook.Worksheets.First();
-
-            Console.WriteLine($"GETNET => {worksheet.Name}");
+            Console.WriteLine($"GETNET");
 
             getnet.Workbook.Calculate();
 
@@ -49,7 +52,7 @@ namespace v5
 
             Console.WriteLine($"MOTOR");
 
-            //motor.Workbook.Calculate();
+            motor.Workbook.Calculate();
 
             Console.WriteLine($"B13: {motor.Workbook.Worksheets["Output"].Cells["B13"].Value}");
             Console.WriteLine($"B14: {motor.Workbook.Worksheets["Output"].Cells["B14"].Value}");
