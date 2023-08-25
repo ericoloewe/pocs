@@ -1,11 +1,10 @@
-﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.33927.289
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33627.172
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mvcapp", "mvcapp\mvcapp.csproj", "{1F4539EC-2531-469A-B9B2-16454B77989D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "console", "console\console.csproj", "{B161903D-8273-4C05-8AA1-6E82DB661448}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "console", "console\console.csproj", "{B161903D-8273-4C05-8AA1-6E82DB661448}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
