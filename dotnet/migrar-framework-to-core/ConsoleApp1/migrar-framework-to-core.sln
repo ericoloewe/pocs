@@ -6,6 +6,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mvcapp", "mvcapp\mvcapp.csp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "console", "console\console.csproj", "{B161903D-8273-4C05-8AA1-6E82DB661448}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "mvcapp-core-yarp", "mvcapp-core-yarp\mvcapp-core-yarp.csproj", "{82894729-8F4B-4A2B-9C5C-F4B23325C5ED}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -20,6 +22,10 @@ Global
 		{B161903D-8273-4C05-8AA1-6E82DB661448}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B161903D-8273-4C05-8AA1-6E82DB661448}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B161903D-8273-4C05-8AA1-6E82DB661448}.Release|Any CPU.Build.0 = Release|Any CPU
+		{82894729-8F4B-4A2B-9C5C-F4B23325C5ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{82894729-8F4B-4A2B-9C5C-F4B23325C5ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{82894729-8F4B-4A2B-9C5C-F4B23325C5ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{82894729-8F4B-4A2B-9C5C-F4B23325C5ED}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
