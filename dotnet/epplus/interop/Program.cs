@@ -1,9 +1,11 @@
-﻿using System;
+﻿using Microsoft.Office.Interop.Excel;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -17,46 +19,6 @@ namespace interop
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World interop!");
-
-            //ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
-
-            //using ExcelPackage index = new ExcelPackage(File.OpenRead("../../../../index_error.xlsx"));
-
-            //var worksheet = index.Workbook.Worksheets[0];
-
-            //Console.WriteLine($"Index OK => {worksheet.Name}");
-
-            //using ExcelPackage github = new ExcelPackage(File.OpenRead("../../../../github_example.xlsx"));
-
-            //Console.WriteLine($"GITHUB");
-
-            //github.Workbook.Calculate();
-
-            //Console.WriteLine($"C29: {github.Workbook.Worksheets["Summary"].Cells["C29"].Value}");
-            //Console.WriteLine($"C29: {github.Workbook.Worksheets["Summary"].Cells["C29"].Value}");
-            //Console.WriteLine($"S6123: {github.Workbook.Worksheets["Details"].Cells["S6123"].Value}");
-
-            //using ExcelPackage getnet = new ExcelPackage(File.OpenRead("../../../../getnet_errors.xlsx"));
-
-            //Console.WriteLine($"GETNET");
-
-            //getnet.Workbook.Calculate();
-
-            //Console.WriteLine($"B1: {getnet.Workbook.Worksheets["Plan1"].Cells["B1"].Value}");
-            //Console.WriteLine($"B2: {getnet.Workbook.Worksheets["Plan1"].Cells["B2"].Value}");
-
-            //Console.WriteLine($"E1: {getnet.Workbook.Worksheets["Plan1"].Cells["E1"].Value}");
-            //Console.WriteLine($"E2: {getnet.Workbook.Worksheets["Plan1"].Cells["E2"].Value}");
-
-            //Console.WriteLine($"H1: {getnet.Workbook.Worksheets["Plan1"].Cells["H1"].Value}");
-            //Console.WriteLine($"H2: {getnet.Workbook.Worksheets["Plan1"].Cells["H2"].Value}");
-
-            //Console.WriteLine($"K1: {getnet.Workbook.Worksheets["Plan1"].Cells["K1"].Value}");
-            //Console.WriteLine($"K2: {getnet.Workbook.Worksheets["Plan1"].Cells["K2"].Value}");
-            //Console.WriteLine($"K3: {getnet.Workbook.Worksheets["Plan1"].Cells["K3"].Value}");
-            //Console.WriteLine($"K4: {getnet.Workbook.Worksheets["Plan1"].Cells["K4"].Value}");
-
-            //using ExcelPackage motor = new ExcelPackage(File.OpenRead("../../../../motor.xlsm"));
 
             Console.WriteLine($"start ALL motor");
 
@@ -72,21 +34,7 @@ namespace interop
 
             Task.WhenAll(tasks.ToArray()).Wait();
 
-            var tasksSameFile = new List<Task>();
-
-            var vXlApp = new Excel.Application();
-            var path = Path.GetFullPath(Path.Combine(Directory.GetCurrentDirectory(), @"..\..\..\", "motor.xlsm"));
-            var vXlWorkBook = vXlApp.Workbooks.Open(path);
-
-            tasksSameFile.Add(Run($"RUN:PARALLEL:SAMEFILE:{1}", "motor.xlsm", vXlWorkBook));
-            tasksSameFile.Add(Run($"RUN:PARALLEL:SAMEFILE:{2}", "motor.xlsm", vXlWorkBook));
-            tasksSameFile.Add(Run($"RUN:PARALLEL:SAMEFILE:{3}", "motor.xlsm", vXlWorkBook));
-            tasksSameFile.Add(Run($"RUN:PARALLEL:SAMEFILE:{4}", "motor.xlsm", vXlWorkBook));
-
-            Task.WhenAll(tasksSameFile.ToArray()).Wait();
-
-            vXlWorkBook.Close(false);
-            Console.WriteLine($"end excel close");
+            //RunAllSameFile();
 
             Console.WriteLine($"end ALL motor");
             Console.ReadKey();
@@ -94,11 +42,42 @@ namespace interop
             System.Threading.Thread.Sleep(1000);
         }
 
+        private static void RunAllSameFile()
+        {
+            var tasksSameFile = new List<Task>();
+
+            var vXlApp = new Excel.Application();
+            var path = Path.GetFullPath(Path.Combine(Directory.GetCurrentDirectory(), @"..\..\..\", "motor.xlsm"));
+            var vXlWorkBook = vXlApp.Workbooks.Open(path);
+
+            try
+            {
+                tasksSameFile.Add(Run($"RUN:PARALLEL:SAMEFILE:{1}", "motor.xlsm", vXlWorkBook));
+                tasksSameFile.Add(Run($"RUN:PARALLEL:SAMEFILE:{2}", "motor.xlsm", vXlWorkBook));
+                tasksSameFile.Add(Run($"RUN:PARALLEL:SAMEFILE:{3}", "motor.xlsm", vXlWorkBook));
+                tasksSameFile.Add(Run($"RUN:PARALLEL:SAMEFILE:{4}", "motor.xlsm", vXlWorkBook));
+
+                Task.WhenAll(tasksSameFile.ToArray()).Wait();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+
+
+            vXlWorkBook.Close(0);
+            vXlApp.Quit();
+            Marshal.ReleaseComObject(vXlWorkBook);
+            Marshal.ReleaseComObject(vXlApp);
+            Console.WriteLine($"end excel close");
+        }
+
         private static async Task Run(string code, string fileName, Excel.Workbook vXlWorkBook = null)
         {
             await Task.Delay(random.Next(100, 500));
             var stopWatch = new Stopwatch();
             var needToClose = false;
+            Excel.Application vXlApp = null;
 
             stopWatch.Start();
 
@@ -106,11 +85,11 @@ namespace interop
 
             if (vXlWorkBook == null)
             {
-                var vXlApp = new Excel.Application();
+                vXlApp = new Excel.Application();
                 var path = Path.GetFullPath(Path.Combine(Directory.GetCurrentDirectory(), @"..\..\..\", fileName));
                 vXlWorkBook = vXlApp.Workbooks.Open(path);
                 needToClose = true;
-            Console.WriteLine($"{code} end excel load in {stopWatch.ElapsedMilliseconds}ms");
+                Console.WriteLine($"{code} end excel load in {stopWatch.ElapsedMilliseconds}ms");
             }
 
             await Task.Delay(random.Next(100, 500));
@@ -141,7 +120,10 @@ namespace interop
 
             if (needToClose)
             {
-                vXlWorkBook.Close(false);
+                vXlWorkBook.Close(0);
+                vXlApp?.Quit();
+                Marshal.ReleaseComObject(vXlWorkBook);
+                Marshal.ReleaseComObject(vXlApp);
                 Console.WriteLine($"{code} end excel close in {stopWatch.ElapsedMilliseconds}ms");
             }
         }
