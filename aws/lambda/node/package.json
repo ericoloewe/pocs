@@ -16,7 +16,7 @@
   "author": "CWI",
   "license": "ISC",
   "dependencies": {
-    "aws-sdk": "^2.419.0",
+    "aws-sdk": "^2.814.0",
     "axios": "^0.18.0",
     "axios-retry": "^3.1.2",
     "dotenv": "^6.2.0"
